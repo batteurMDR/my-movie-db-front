@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/index'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Movies from './pages/movies';
+import CreateMovies from './pages/createMovies';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <h1>Welcom to my MONGO API</h1>
+          <Switch>
+            <Route path='/movies' component={Movies} />
+            <Route path='/createMovies' component={CreateMovies} />
+          </Switch>
+      </Router>
+    </>
   );
 }
 
