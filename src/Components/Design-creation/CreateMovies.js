@@ -1,10 +1,9 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { Form, Button, Col } from "react-bootstrap";
 
 
-class CreateUsers extends React.Component  {
+class CreateMovies extends React.Component  {
     constructor(props) {
         super(props);
 
@@ -30,6 +29,13 @@ class CreateUsers extends React.Component  {
           age: this.state.age,
           movies: this.state.movies
         };
+
+        axios.post(`http://localhost:3030/user`, { user })
+         .then(res => {
+             const users = res.config.data;
+             console.log(res.config.data)
+             this.setState({ users });
+         });
     }
 
     render() {
@@ -63,5 +69,5 @@ class CreateUsers extends React.Component  {
     
 }
 
-export default CreateUsers;
+export default CreateMovies;
 
