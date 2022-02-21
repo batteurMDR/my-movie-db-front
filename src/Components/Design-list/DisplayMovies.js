@@ -9,7 +9,15 @@ class DisplayMovies extends React.Component  {
         }
     }
 
-    
+    componentDidMount() {
+        axios.get(`http://localhost:3030/movies`)
+         .then(res => {
+             const movies = res.data.result;
+             console.log(movies)
+             this.setState({ movies });
+         });
+    }
+
     render() {
         return (
             <div className="moviesList">
