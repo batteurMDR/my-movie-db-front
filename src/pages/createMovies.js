@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateMovies from '../Components/CreateMovies';
+import CreateMovies from '../Components/Design-creation/CreateMovies';
 
 const CreateMovies = () => {
   return (
